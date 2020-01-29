@@ -6,6 +6,9 @@ parser.add_argument('--params')
 parser.add_argument('--input_shape')
 
 args = parser.parse_args()
-print(args.symbol)
-print(args.params)
-print(args.input_shape)
+
+symbol_path = args.symbol
+params_path = args.params
+input_shape = list(map(int, args.input_shape.split(",")))
+
+print(input_shape)
