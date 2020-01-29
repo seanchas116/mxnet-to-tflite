@@ -1,4 +1,6 @@
 from argparse import ArgumentParser
+import numpy as np
+from mxnet.contrib import onnx as onnx_mxnet
 
 parser = ArgumentParser(description='Convert MXNet models to TensorFlow Lite models')
 parser.add_argument('--symbol')
@@ -11,4 +13,6 @@ symbol_path = args.symbol
 params_path = args.params
 input_shape = list(map(int, args.input_shape.split(",")))
 
-print(input_shape)
+onnx_file = '__model.onnx'
+
+converted_model_path = onnx_mxnet.export_model(symbol_path, params_path, [input_shape], np.float32, onnx_file)
