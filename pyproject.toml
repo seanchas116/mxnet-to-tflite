@@ -9,6 +9,8 @@ python = "^3.7"
 onnx = "1.3.0"
 numpy = "^1.18.1"
 mxnet = "^1.5.1"
+onnx_tf = "1.3.0"
+tensorflow = "1.14.0"
 
 [tool.poetry.dev-dependencies]
 
